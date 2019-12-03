@@ -1,0 +1,28 @@
+.center{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  
+}
+.title{
+  color: #111; 
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 60px; 
+  font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1;
+  text-align: center;
+}
+.text {
+  width: 500px ; 
+  
+}
+.margin{
+  margin-top: 100px ;
+}
+
