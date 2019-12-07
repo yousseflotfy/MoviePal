@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import Search from './components/Search'
 
-function App() {
+
+class App extends Component  {
+  constructor(props){
+    super(props);
+    this.state = {renderFlag:false,
+                  recommendations : []};
+    this.setRenderFlag = this.setRenderFlag.bind(this);
+  }
+  setRenderFlag(){
+    this.setState({renderFlag:true});
+    console.log(this.state.renderFlag);
+  } 
+  callbackFunction = (result) => {
+    this.setState({recommendations: result})
+}
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-             
-             <div className="center">
-             <h1 className = "title">Welcome to MoviePal</h1>
-             <TextField id="standard-basic" label="Enter your favorite movie to explore your new favorite !" className ="text"  />
-             <div className = "margin">
-             <Button variant="contained" color="primary" >Go !</Button>
-             </div>
-             </div>    
+        {/* {this.state.renderFlag === false && */}
+           <Search setRenderFlag = {this.setRenderFlag} callback = {this.callbackFunction}></Search>   }
+        {/* {this.state.renderFlag ===true &&
+            <div>
+            <h1>recommendations</h1>
+            {this.state.recommendations}
+            </div>}    */}
       </header>
     </div>
   );
+  }
 }
 
 export default App;
