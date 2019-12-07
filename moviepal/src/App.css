@@ -25,4 +25,12 @@
 .margin{
   margin-top: 100px ;
 }
+.movies{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-around;
+  width: 100%
+}
 
