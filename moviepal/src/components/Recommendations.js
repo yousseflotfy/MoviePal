@@ -20,6 +20,8 @@ class Recommendations extends Component  {
   }
 
   async componentDidMount(){
+    
+    
     var moviesDetails = []
     for(var i = 0; i < this.state.result.length; i++){
       var movieInfo = {}
@@ -44,10 +46,10 @@ class Recommendations extends Component  {
   render(){
 
       var Movies = []
-      if(this.state.moviesDetails.length == 20){
+      if(this.state.moviesDetails.length == 15){
         //console.log(this.state.moviesDetails)
         for(var i = 0; i < this.state.result.length; i++){
-          Movies.push( <div style = {{width: "15%", height : "300px", marginTop:"20px"} } >
+          Movies.push( <div style = {{width: "15%", height : "300px", margin:"30px"} } >
                         
                           {/* <h3 style={{fontFamily:"Lucida Bright"}}>{this.state.result[i].Name}</h3>  */}
                           <img src={"http://image.tmdb.org/t/p/w185/"+this.state.moviesDetails[i].poster}/>
@@ -61,7 +63,7 @@ class Recommendations extends Component  {
   return (
    <div className="center" >
       <div className = "movies">
-        {this.state.moviesDetails.length == 20? Movies: null}
+        {this.state.moviesDetails.length == 15? Movies: null}
       </div>
   </div>
   );

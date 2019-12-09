@@ -30,7 +30,7 @@ class Search extends Component {
    
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     var url = new URL("https://tastedive.com/api/similar?"),
-    params = {"q":this.state.title , "type":"movie", "k":"349273-FindMovi-0BRXNV0Z"}
+    params = {"q":this.state.title , "type":"movie","limit":"15" ,"k":"349273-FindMovi-0BRXNV0Z"}
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
      await fetch(proxyurl + url)
     .then(response => response.text())
