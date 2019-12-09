@@ -3,7 +3,7 @@ import '../App.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
-// import axios from 'axios';
+var config = require('../config');
 
 class Search extends Component {
   constructor(props) {
@@ -27,10 +27,11 @@ class Search extends Component {
 // }
 
   async  tastedive(){
-   
+    console.log("c:"+JSON.stringify(config.api));
+    const type = config.api.tasteDive.type; 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     var url = new URL("https://tastedive.com/api/similar?"),
-    params = {"q":this.state.title , "type":"movie","limit":"15" ,"k":"349273-FindMovi-0BRXNV0Z"}
+    params = {"q":this.state.title , "type":type,"limit": config.api.tasteDive.limit,"k":config.api.tasteDive.key}
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
      await fetch(proxyurl + url)
     .then(response => response.text())
