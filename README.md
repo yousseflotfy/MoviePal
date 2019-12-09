@@ -26,6 +26,7 @@ config.json include json object api including 2 subobjects tastedive that includ
 }
 
 #docker
+docker build -t moviepal:dev
 docker run -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm moviepal:dev
 to run the docker container directly
 
