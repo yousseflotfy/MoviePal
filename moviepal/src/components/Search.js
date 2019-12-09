@@ -22,26 +22,25 @@ class Search extends Component {
   sendData = () => {
     this.props.callback(this.state.result);
 }
-// componentWillUnmount() {
-//   this.routeChange();
-// }
+
 
   async  tastedive(){
     console.log("c:"+JSON.stringify(config.api));
     const type = config.api.tasteDive.type; 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     var url = new URL("https://tastedive.com/api/similar?"),
-    params = {"q":this.state.title , "type":type,"limit": config.api.tasteDive.limit,"k":config.api.tasteDive.key}
+    params = {"q":this.state.title , "type":type,"k":config.api.tasteDive.key}
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
      await fetch(proxyurl + url)
     .then(response => response.text())
-    .then(contents =>this.setState({result:contents}))
-    //.then(this.props.callback(this.state.title))
-    //.then(console.log(this.state.result))
-    .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-   //console.log(this.state.result);
-   //this.props.setRenderFlag();
-   this.routeChange();
+    .then(contents => {
+      this.setState({result:contents});
+      this.routeChange();
+    })
+    .catch(() => {
+      
+    })
+   
     
     
     
@@ -60,7 +59,7 @@ class Search extends Component {
     return (      
       <div className="center">
         <h1 className = "title">Welcome to MoviePal!</h1>
-        <TextField id="standard-basic" onChange={this.handleChange} value={this.state.title} label="Enter your favorite movie to explore your new favorite!" className ="text"  />
+        <TextField id="standard-basic" onChange={this.handleChange} value={this.state.title} label="Enter your favorite movie to explore your new favorite!" className ="text"/>
         <div className = "margin">
           <Button variant="contained" color="primary" onClick={this.tastedive}>Go!</Button>
         </div>

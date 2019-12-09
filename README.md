@@ -17,8 +17,7 @@ config.json include json object api including 2 subobjects tastedive that includ
 {"api": {
     "tasteDive":{
      "key":"xxxxx-xxxx-xxxxx",
-     "type":"movie",
-     "limit":"15"
+     "type":"movie"
     },
     "theMoviedb":{
      "key":"xxxxxxxxxxxxx"
@@ -37,3 +36,6 @@ to build the image and fire up the container
 
 docker-compose stop
 to bring down the container
+
+#This server is deployed on heroku
+app url: http://moviepal.herokuapp.com
