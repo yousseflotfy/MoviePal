@@ -31,7 +31,7 @@
   flex-wrap: wrap;
   align-content: stretch;
   justify-content: space-around;
-  width: 100%
+  width: 100%;
 }
 
 .movieDetails{
@@ -62,13 +62,6 @@ a:visited {
   color: rgb(0, 13, 128);
 }
 
-/* Non-Demo Styles */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
 .card {
  

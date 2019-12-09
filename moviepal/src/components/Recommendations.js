@@ -47,7 +47,7 @@ class Recommendations extends Component  {
       if(this.state.moviesDetails.length == 20){
         //console.log(this.state.moviesDetails)
         for(var i = 0; i < this.state.result.length; i++){
-          Movies.push( <div style = {{width: "15%", height : "300px", margin:"20px"} } >
+          Movies.push( <div style = {{width: "15%", height : "300px", marginTop:"20px"} } >
                         
                           {/* <h3 style={{fontFamily:"Lucida Bright"}}>{this.state.result[i].Name}</h3>  */}
                           <img src={"http://image.tmdb.org/t/p/w185/"+this.state.moviesDetails[i].poster}/>
